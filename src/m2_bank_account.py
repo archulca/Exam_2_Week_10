@@ -50,6 +50,9 @@ class Bank(object):
     # TODO: 1. Implement and test instances of this class.
     #     See the testing code (scroll down near bottom) for more examples.
     # ---------------------------------------------------------------------
+        self.name = name
+        self.initial_deposit = initial_deposit
+        self.account_number = account_number
 
 
     def withdraw(self, amount):
@@ -84,7 +87,11 @@ class Bank(object):
     #   Put your code for withdraw below
     #
     # ---------------------------------------------------------------------
-
+        if amount > self.initial_deposit:
+            print('Error')
+        else:
+            self.balance = self.initial_deposit - amount
+        return self.balance
 
 def run_test_init():
     """ Tests the   __init__   method of the Bank class. """
@@ -114,7 +121,12 @@ def run_test_init():
 # ---------------------------------------------------------------------
 def run_test_withdraw():
 # Implement at least two tests.  Use copy and paste to speed your coding.
-    pass
+    #Test 1:
+    b1 = Bank('Brackin',5000)
+    expected_name = 'Brackin'
+    expected_balance = 5000
+    print('Expected:',expected_name,expected_balance)
+    print('Actual:',b1.name,b1.balance)
 
 
 def print_failure_message():

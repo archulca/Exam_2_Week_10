@@ -111,7 +111,7 @@ def is_prime(n):
     return True
 
 # -------------------------------------------------------------------------
-#  TODO: 2. Implement and test the draw_a_picture function.
+#  DONE: 2. Implement and test the draw_a_picture function.
 #           Tests have been written for you (above in main).
 #  We suggest breaking this into multiple commits.
 #     Can you show the correct circle?
@@ -135,12 +135,15 @@ def draw_a_picture(point, n, color, window):
     window.render()
     for k in range (n):
         left_corner = rectangle.get_upper_left_corner()
-        dx = 160/n
-        line = rg.Line(point,rg.Point(left_corner.x+ k*dx,left_corner.y))
+        dx = 160/(n-1)
+        line = rg.Line(point,rg.Point(left_corner.x,left_corner.y))
+        newline = rg.Line(point,rg.Point(left_corner.x+k*dx,left_corner.y))
+        newline.attach_to(window)
         line.attach_to(window)
         window.render(0.5)
+        line.color = color
         if is_prime(k):
-            line.color = 'orange'
+            newline.color = 'orange'
         else:
-            line.color = color
+            newline.color = color
 main()
