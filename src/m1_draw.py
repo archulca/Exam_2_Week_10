@@ -146,4 +146,5 @@ def draw_a_picture(point, n, color, window):
             newline.color = 'orange'
         else:
             newline.color = color
+
 main()
