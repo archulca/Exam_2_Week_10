@@ -87,7 +87,6 @@ class Bank(object):
     #   Put your code for withdraw below
     #
     # ---------------------------------------------------------------------
-        balance = self.initial_deposit
         if amount > self.initial_deposit:
             print('error')
         else:
