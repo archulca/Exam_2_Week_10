@@ -11,7 +11,7 @@ import rosegraphics as rg
 
 def main():
     #
-    #   Tests are called from here.  Do not make any changes to main
+    #    are called from here.  Do not make any changes to main
     #
     test_draw_a_picture()
 
